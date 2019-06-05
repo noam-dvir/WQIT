@@ -26,7 +26,9 @@ SECRET_KEY = 'f*!dcm(+vpo#ftjj=y8)(9vfxezc$4z8+p3w79y5p_am3pwl_l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'whosequoteisthis.pythonanywhere.com',
+]
 
 
 # Application definition

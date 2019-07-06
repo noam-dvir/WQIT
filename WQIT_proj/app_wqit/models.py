@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 
 class Person(models.Model):
     person_id = models.AutoField(primary_key=True)
@@ -12,7 +11,6 @@ class Person(models.Model):
 
 
 class Quote(models.Model):
-    quote_id = models.IntegerField(unique=True)
     quote_text = models.CharField(max_length=264,unique=True)
     quote_source = models.ForeignKey(Person,on_delete=models.CASCADE)
 

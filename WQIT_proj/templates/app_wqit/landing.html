@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+	<title>Whose Quote Is This?</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Play:400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static "css/landing.css" %}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+</head>
+<body>
+	<div id="landing-header">
+ 		<h1>Welcome to 'Whose Quote Is This?'</h1>
+ 		<p>
+ 			<br>Whether you're looking for a cool phrase to tattoo on your body
+			<br>or simply appreciate a powerful quote from unique individuals
+			<br>WQIT is the place for you
+ 		</p>
+		<a href="{% url 'app_wqit:index' %}" class="btn btn-lg" id="play-btn">Let's play</a>
+    </div>
+    <ul class="slideshow">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+</body>
+</html>

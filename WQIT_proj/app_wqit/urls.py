@@ -5,8 +5,7 @@ from app_wqit import views
 app_name = "app_wqit"
 
 urlpatterns = [
-    url(r'^$',views.index,name='index'),
-    url(r'^help/',views.help,name='help'),
-    url(r'^relative/$',views.relative,name='relative'),
-    url(r'^about/$',views.about,name='about'),
+    url(r'^$',views.LandingView.as_view(),name='landing'),
+    url(r'^index',views.QuoteListView.as_view(),name='index'),
+    url(r'^about/$',views.AboutView.as_view(),name='about'),
 ]

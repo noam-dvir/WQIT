@@ -1,16 +1,13 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-# Create your views here.
+from app_wqit.models import Quote
+from django.views.generic import TemplateView,ListView
 
-def index (request):
-    return render(request,'app_wqit/index.html')
 
-def help(request):
-    helpdict = {'help_insert':'HELP PAGE'}
-    return render(request,'app_wqit/help.html',context=helpdict)
+class QuoteListView(ListView):
+    model = Quote
+    template_name = 'app_wqit/index.html'
 
-def about(request):
-    return render(request,'app_wqit/about.html')
+class AboutView(TemplateView):
+    template_name = 'app_wqit/about.html'
 
-def relative(request):
-    return render(request,'app_wqit/relative_url_templates.html')
+class LandingView(TemplateView):
+    template_name = 'app_wqit/landing.html'

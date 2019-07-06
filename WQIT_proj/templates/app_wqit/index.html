@@ -1,13 +1,95 @@
 <!DOCTYPE html>
+{% extends "app_wqit/base.html" %}
 {% load staticfiles %}
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>home page</title>
-    <link rel="stylesheet" href="{% static "css/myStyle.css" %}"/>
-  </head>
-  <body>
-    <h1>MY FIRST WEB APPLICATION!</h1>
-    <img src="{% static "images/naama.jpg" %}" alt="something went wrong">
-  </body>
-</html>
+  {% block body_block %}
+
+    <div class="container-fluid text-center fixed-top" id="jumbo">
+      <p id="quote-container"></p>
+      <p>
+        <a class="btn btn-primary btn-md fast-transition shadow-none" id="reset" role="button" href="#">Reset</a>
+        <a class="btn btn-primary btn-md fast-transition shadow-none" id="easy" role="button" href="#">Easy</a>
+        <a class="btn btn-primary btn-md fast-transition selected shadow-none" id="hard" role="button" href="#">Hard</a>
+      </p>
+    </div>
+
+    <div class="container-fluid" id="gallery">
+       <div class="container-fluid" id="cards-cont">
+            <div class="row justify-content-around" id="row_div_1">
+                <div class="col-xs-12 col-md-6 col-lg-4">
+                    <div class="card fast-transition mx-4">
+                        <a href="#" class="d-none d-sm-block h-100">
+                            <img class="card-img-top img-fluid img-thumbnail" src="#" alt="">
+                        </a>
+                        <div class="card-footer container-fluid" id="footerDiv">
+                          <small class="text-muted">quoter option #1</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-4">
+                  <div class="card fast-transition mx-4">
+                      <a href="#" class="d-none d-sm-block h-100">
+                        <img class="card-img-top img-fluid img-thumbnail" src="#" alt="">
+                      </a>
+                      <div class="card-footer container-fluid" id="footerDiv">
+                        <small class="text-muted">quoter option #2</small>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-4">
+                    <div class="card fast-transition mx-4">
+                        <a href="#" class="d-none d-sm-block h-100">
+                            <img class="card-img-top img-fluid img-thumbnail" src="#" alt="">
+                        </a>
+                        <div class="card-footer container-fluid" id="footerDiv">
+                          <small class="text-muted">quoter option #3</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-4">
+                  <div class="card fast-transition mx-4">
+                      <a href="#" class="d-none d-sm-block h-100">
+                          <img class="card-img-top img-fluid img-thumbnail" src="#" alt="">
+                      </a>
+                      <div class="card-footer container-fluid" id="footerDiv">
+                        <small class="text-muted">quoter option #4</small>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-4">
+                  <div class="card fast-transition mx-4">
+                      <a href="#" class="d-none d-sm-block h-100">
+                        <img class="card-img-top img-fluid img-thumbnail" src="#" alt="">
+                      </a>
+                      <div class="card-footer container-fluid" id="footerDiv">
+                        <small class="text-muted">quoter option #5</small>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-xs-12 col-md-6 col-lg-4">
+                    <div class="card fast-transition mx-4">
+                        <a href="#" class="d-none d-sm-block h-100">
+                          <img class="card-img-top img-fluid img-thumbnail" src="#" alt="">
+                        </a>
+                        <div class="card-footer container-fluid" id="footerDiv">
+                          <small class="text-muted">quoter option #6</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+    <script type="text/javascript">
+      var my_quotes = []
+      var my_quotes_sources = []
+      var img_urls = []
+        {% for quote in quote_list %}
+            my_quotes.push("{{ quote.quote_text }}")
+            my_quotes_sources.push("{{ quote.quote_source }}")
+            img_urls.push("{{ quote.quote_source.image_url }}")
+        {% endfor %}
+    </script>
+
+    <script type="text/javascript" src="{% static "JavaScript/JS_wqit.js" %}">
+    </script>
+
+  {% endblock %}
